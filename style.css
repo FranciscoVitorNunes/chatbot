@@ -124,8 +124,13 @@ input[type="text"]:focus {
   border-radius: 10px;
   padding: 5px;
   box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+  max-height: 150px; /* Limita a altura das sugestões */
+  overflow-y: auto; /* Adiciona rolagem vertical */
+  touch-action: pan-y; 
 }
-
+input[type="text"] {
+  touch-action: manipulation; /* Evita problemas de interação com o teclado */
+}
 .suggestions div {
   padding: 10px;
   border-radius: 10px;
@@ -136,6 +141,7 @@ input[type="text"]:focus {
 .suggestions div:hover {
   background-color: #a5d6a7;
 }
+
 
 @keyframes fadeInUp {
   0% {

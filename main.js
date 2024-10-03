@@ -59,6 +59,13 @@ async function mostrarSugestoes() {
   }
 }
 
+// Força o scroll do container de sugestões enquanto digita
+document.getElementById('question-input').addEventListener('input', function() {
+  const suggestionsDiv = document.getElementById('suggestions');
+  suggestionsDiv.scrollTop = suggestionsDiv.scrollHeight;
+});
+
+
 // Enviar a pergunta do usuário e exibir a resposta no chat
 async function enviarPergunta() {
   const input = document.getElementById('question-input').value;
